@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Gestion de point d'arret</title>
+</head>
+<body class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 p-8 w-full text-center">
+    
+    <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Nombre de personne</h5>
+        <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+            <span class="text-5xl font-extrabold tracking-tight" id="nb_personne">%NBPE%</span>
+        </div>
+    </div>
+    
+    <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Prochain véhicule dans :</h5>
+        <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+            <span class="text-5xl font-extrabold tracking-tight">10 mn</span>
+        </div>
+    </div>
+    <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Place disponible</h5>
+        <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+            <span class="text-5xl font-extrabold tracking-tight" id="nb_place">%NBPL%</span>
+        </div>
+    </div>
+    <script> 
+        $(document).ready(function(){
+        setInterval(function(){
+              $("#nb_personne").load(window.location.href + " #nb_personne" );
+              $("#nb_place").load(window.location.href + " #nb_place" );
+        }, 500);
+        });
+        </script>
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+</body>
+</html>
